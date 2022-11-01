@@ -5,11 +5,17 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "/users", to: "users#index"
-  get "/users/:id", to: "user#show"
+  get "/users/:id", to: "users#show"
   get "/users/:id/posts", to: "posts#index"
   get "/users/:id/posts/:id", to: "posts#show"
 
   resources :users do
     resources :posts
   end
+
+  root "users#index"
+
+
+  
+
 end
