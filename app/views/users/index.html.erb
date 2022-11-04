@@ -1,1 +1,18 @@
 <h1>display list of all the users</h1>
+
+<% @users.each do |user| %>
+<div class="users">
+<div class= "image">
+<img src="<%= user.photo %>" alt="<%= user.name %>"/>
+</div>
+
+<div class="info">
+<ul class="list-of_users">
+<li class= "user">
+<h3 class="name">Name:   <%= user.name %> <br> </h3>
+Postcounter: <%= user.postcounter %>
+</li>
+</ul>
+</div>
+</div>
+ <% end %>

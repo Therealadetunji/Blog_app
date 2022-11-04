@@ -1,1 +1,21 @@
 <h1>show a specific post for a user</h1>
+
+<h1>show a specific post for a user</h1>
+
+
+
+<div class="info">
+<div class="intro">
+<h3>post #<%= @post.id %></h3>  <h5>by</h5> <h4><%= @post.author.name %></h4> <h6>Comments: <%= @post.commentscounter %> Likes: <%= @post.likescounter %></h6>
+</div>
+
+<h5><%= @post.text %></h5>
+
+</div>
+
+<% @post.comments.each do |comment|%>
+<div class="username-text">
+<%= comment.author.name%>: <%= comment.text%>
+</div>
+<% end %>
+

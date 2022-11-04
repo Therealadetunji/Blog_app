@@ -1,1 +1,31 @@
 <h1>display all the posts for a specific user</h1>
+
+
+
+<div class="users">
+<div class= "image">
+<img src="<%= @user.photo %>" alt="<%= @user.name %>"/>
+</div>
+
+<div class="info">
+<ul class="list-of_users">
+<li class= "user">
+<h3 class="name">Name:   <%= @user.name %> <br> </h3>
+Postcounter: <%= @user.postcounter %>
+</li>
+</ul>
+</div>
+</div>
+
+<% @user.posts.each do |post| %>
+<div class="info">
+<h3>post #<%= post.id %></h3>
+<h4><%= post.title %></h4>
+<h5><%= post.text %></h5>
+
+<h6>Comments: <%= post.commentscounter %> Likes: <%= post.likescounter %></h6>
+</div>
+ <% end %>
+
+ <button class="btn">Pagination</button>
+
