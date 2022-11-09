@@ -7,8 +7,6 @@ RSpec.describe Post, type: :model do
   post = Post.new(author: user, title: 'Half of a yellow sun', text: 'This is my first post', commentscounter: 1,
                   likescounter: 2)
 
-  before { post.save }
-
   it 'title must be present' do
     post.title = 'Half of a yellow sun'
     expect(post).to be_valid
