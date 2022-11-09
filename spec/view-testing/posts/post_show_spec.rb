@@ -36,11 +36,7 @@ RSpec.describe 'user index-page', type: :feature do
     it 'username of the commentor' do
       expect(page).to have_content(@comments.author.name)
     end
-    
 
-    #Anasy code here
-    it 'each comment by a commentor' do
-      expect(page).to have_content('Hi Tom!')
-    end
+    # Anasse code here
   end
 end

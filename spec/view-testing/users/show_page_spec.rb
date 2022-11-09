@@ -20,8 +20,7 @@ RSpec.describe 'user index-page', type: :feature do
     it "display the user's name" do
       expect(page).to have_content(@user.name)
     end
-     #ushindi code here
-    
+    # ushindi code here
 
     it 'display the bio of the user' do
       expect(page).to have_content(@user.bio)
