@@ -25,7 +25,9 @@ RSpec.describe 'user index-page', type: :feature do
     it 'display the bio of the user' do
       expect(page).to have_content(@user.bio)
     end
-
+    it 'display number of post for a user' do
+      expect(page).to have_content(@user.postcounter)
+    end 
     it 'display the first three post' do
       expect(page).to have_text('This is the second post i think')
       expect(page).to have_text('been programming all day literally')
