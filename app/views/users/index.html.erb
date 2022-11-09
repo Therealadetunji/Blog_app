@@ -1,16 +1,19 @@
 <% @users.each do |user| %>
-<div class="users">
-<div class= "image">
-<img src="<%= user.photo %>" alt="<%= user.name %>"/>
-</div>
+  
+        <div class="users">
+            <div class= "image">
+                <img src="<%= user.photo %>" alt="<%= user.name %>"/>
+            </div>
 
-<div class="info">
-<ul class="list-of_users">
-<li class= "user">
-<h3 class="name">Name:   <%= user.name %> <br> </h3>
-Postcounter: <%= user.postcounter %>
-</li>
-</ul>
-</div>
-</div>
- <% end %>
+            <div class="info">
+                <ul class="list-of_users">
+                    <li class= "user">
+                        <%= link_to user_path(user.id) do %>
+                    <h3 class="name"><%=user.name%><br></h3>
+                        <% end %>
+                    Postcounter: <%= user.postcounter %>
+                    </li>
+                </ul>
+            </div>
+        </div>
+<% end %>

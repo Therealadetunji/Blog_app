@@ -7,7 +7,6 @@ RSpec.describe Post, type: :model do
   post = Post.create(author: user, title: 'Half of a yellow sun', text: 'This is my first post', commentscounter: 1,
                      likescounter: 2)
   comment = Comment.new(post:, author: user, text: 'Hi Tom!')
-  before { comment.save }
 
   it 'No comment raise error' do
     expect { comment.commentscounter }.to raise_error(NoMethodError)

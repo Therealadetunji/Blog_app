@@ -22,6 +22,8 @@
 .name {
   display: flex;
   align-items: flex-end;
+
+  /* list-style-type: none; */
 }
 
 .users-post {
@@ -34,4 +36,8 @@
   box-shadow: 5px 5px #000;
   display: flex;
   margin-left: 45%;
+}
+
+.link {
+  text-decoration: none;
 }

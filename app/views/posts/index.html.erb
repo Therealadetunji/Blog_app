@@ -16,13 +16,22 @@ Postcounter: <%= @user.postcounter %>
 
 <% @user.posts.each do |post| %>
 <div class="info">
-<h3>post #<%= post.id %></h3>
+<%= link_to users_post_path(post.id) do %>
+<h3>post<%= post.id %></h3>
+<%end%>
 <h4><%= post.title %></h4>
 <h5><%= post.text %></h5>
 
 <h6>Comments: <%= post.commentscounter %> Likes: <%= post.likescounter %></h6>
 </div>
+<% post.comments.includes(:author).each do |comment|%>
+<div class="username-text">
+<%= comment.author.name%>: <%= comment.text%>
+</div>
+<% end %>
+
  <% end %>
+
 
  <button class="btn">Pagination</button>
 
