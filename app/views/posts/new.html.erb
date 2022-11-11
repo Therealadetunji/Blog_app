@@ -1,6 +1,6 @@
 <h1>New Post</h1>
 
-<%= form_with model: @post, url:  user_posts_path, method: :post, local: true do |f| %>
+<%= form_with model: @post, url:  users_posts_path(current_user), method: :post, local: true do |f| %>
 <div>
   <%= f.label :Post_title, require: true %><br>
   <%= f.text_field :title %>
@@ -9,9 +9,6 @@
   <%= f.label :Enter_Text %><br>
   <%= f.text_area :text, rows: 10, require: true %>  
 </div>
-<% @post.errors.full_messages_for(:title).each do |message| %>
-  <div><%= message %></div>
-<% end %>
 <div>
   <%= f.submit "Create Post" %>
 </div>
