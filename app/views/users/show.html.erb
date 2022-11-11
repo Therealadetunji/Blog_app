@@ -5,6 +5,9 @@
 <div class="info">
 <h3> Name: <%= @user.name %></h3>
 Postcounter: <%= @user.postcounter %>
+
+<%= link_to "Add a post", new_post_path(current_user) %>
+
 </div>
 </div>
 
@@ -28,4 +31,6 @@ Postcounter: <%= @user.postcounter %>
 <%= link_to users_posts_path() do %>
  <button class="btn">see all posts</button>
  <% end %>
+
+
 
